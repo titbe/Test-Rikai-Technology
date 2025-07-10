@@ -8,5 +8,6 @@ router.post('/create', userController.create);
 router.get('/edit/:id', userController.editForm);
 router.post('/edit/:id', userController.update);
 router.post('/delete/:id', userController.delete);
+router.get('/export', userController.exportCSV);
 
 module.exports = router;

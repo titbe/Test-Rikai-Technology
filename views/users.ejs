@@ -20,6 +20,8 @@
   </div>
 </form>
 
+<a href="/users/export" class="btn btn-outline-secondary mb-2">Export CSV</a>
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -49,3 +51,14 @@
     <% }) %>
   </tbody>
 </table>
+
+<nav>
+  <ul class="pagination">
+    <% for (let p = 1; p <= pagination.totalPages; p++) { %>
+      <li class="page-item <%= p === pagination.page ? 'active' : '' %>">
+        <a class="page-link" href="?company_id=<%= filter.company_id %>&search=<%= filter.search %>&page=<%= p %>"><%= p %></a>
+      </li>
+    <% } %>
+  </ul>
+</nav>
+
