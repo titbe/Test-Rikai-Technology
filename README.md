@@ -10,8 +10,8 @@
 - Danh sách người dùng kèm công ty liên kết
 - Tìm kiếm, lọc theo công ty
 - Giao diện Bootstrap
-- Đóng gói Docker (Node app + MySQL)
-
+- Đóng gói Docker (Node + MySQL)
+- Phân trang (user), xuất danh sách user thành file CSV  
 ---
 
 ## 📂 Cấu trúc thư mục
@@ -21,14 +21,14 @@
 ├── controllers
 │   ├── companyController.js
 │   └── userController.js
-├── models
+├── models             // kết nối DB
 │   └── db.js
 ├── utils
-│   └── common.js      //các hàm tiện ích
+│   └── common.js      // hàm tiện ích
 ├── routes
 │   ├── companyRoute.js
 │   └── userRoute.js
-├── views
+├── views             // Giao diện
 │   ├── layout.ejs
 │   ├── companies.ejs
 │   ├── company_form.ejs
@@ -139,4 +139,4 @@ MIT
 
 ---
 
-> Author: Your Name
+> Author: Phạm Minh Hiếu
