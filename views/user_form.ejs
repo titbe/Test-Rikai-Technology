@@ -1,0 +1,23 @@
+
+<h2><%= user ? "Edit" : "Create" %> User</h2>
+
+<form action="" method="post">
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" value="<%= user ? user.name : '' %>" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" value="<%= user ? user.email : '' %>" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Company</label>
+    <select name="company_id" class="form-select" required>
+      <% companies.forEach(c => { %>
+        <option value="<%= c.id %>" <%= user && user.company_id == c.id ? 'selected' : '' %>><%= c.name %></option>
+      <% }) %>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Save</button>
+  <a href="/users" class="btn btn-secondary">Back</a>
+</form>

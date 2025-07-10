@@ -1,0 +1,41 @@
+<h1>Companies</h1>
+<a href="/companies/create" class="btn btn-primary mb-2">Create New Company</a>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% companies.forEach(c => { %>
+    <tr>
+      <td><%= c.id %></td>
+      <td><%= c.name %></td>
+      <td><%= c.address %></td>
+      <td><%= c.created_at_formatted %></td>
+      <td>
+        <a href="/companies/edit/<%= c.id %>" class="btn btn-warning btn-sm"
+          >Edit</a
+        >
+        <form
+          action="/companies/delete/<%= c.id %>"
+          method="post"
+          style="display: inline"
+        >
+          <button
+            class="btn btn-danger btn-sm"
+            onclick="return confirm('Delete company?')"
+          >
+            Delete
+          </button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
